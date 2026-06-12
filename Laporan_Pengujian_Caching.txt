@@ -1,0 +1,60 @@
+PENGUJIAN STRATEGI CACHING MENGGUNAKAN LOCALHOST
+
+1. Tujuan
+- Menguji caching pada localhost.
+- Memahami konsep Redis, Memcached, CDN, Cache Invalidation, dan Cache Eviction.
+
+2. Lingkungan Pengujian
+- OS: Windows/Linux
+- Web Server: Apache/Nginx
+- PHP/Python (opsional)
+- Redis Server
+- Memcached Server
+- Browser Chrome/Firefox
+- URL: http://localhost
+
+3. Skenario Pengujian Redis
+Langkah:
+1. Jalankan Redis.
+2. Simpan data ke cache.
+3. Akses data pertama kali.
+4. Akses ulang data yang sama.
+
+Hasil yang Diharapkan:
+- Akses kedua lebih cepat karena data berasal dari cache.
+
+4. Skenario Pengujian Memcached
+Langkah:
+1. Jalankan Memcached.
+2. Simpan objek ke cache.
+3. Lakukan request berulang.
+
+Hasil:
+- Waktu respon menurun.
+
+5. Simulasi CDN pada Localhost
+- Gunakan folder assets terpisah.
+- Simulasikan domain statis berbeda.
+- Bandingkan waktu loading sebelum dan sesudah cache browser aktif.
+
+6. Cache Invalidation
+Langkah:
+1. Simpan data cache.
+2. Ubah data sumber.
+3. Hapus cache.
+4. Akses ulang data.
+
+Hasil:
+- Data terbaru tampil setelah cache dihapus.
+
+7. Cache Eviction
+Langkah:
+1. Batasi memori cache.
+2. Isi cache hingga penuh.
+3. Tambahkan data baru.
+
+Hasil:
+- Data lama terhapus otomatis sesuai algoritma eviction.
+
+8. Kesimpulan
+Caching meningkatkan performa localhost dengan mengurangi akses ke database dan mempercepat waktu respon.
